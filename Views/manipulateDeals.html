@@ -1,0 +1,30 @@
+<h2 align="center">Deals Manipulation</h2>
+<br>
+<ul style="display: contents;">
+    <li>
+        <a id="btnRegister" class="purpleButton">&nbsp; Register New Deal &nbsp;</a>
+    </li> <br>
+    <li>
+        <a id="btnDeals" class="purpleButton">&nbsp; Active Deals &nbsp;</a>
+    </li>
+</ul>
+<center><br>
+    <div id="centerLoad"></div>
+</center>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $("#btnRegister").click(function () {
+        $("#centerLoad").load("../Views/registerDeals.html");
+    });
+
+    $("#btnDeals").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../Controllers/dealsList.php',
+            success: function () {
+                $("#centerLoad").load("../Controllers/dealsList.php");
+            }
+        });
+    });
+</script>

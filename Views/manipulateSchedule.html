@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Upload meeting schedule</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="../lib/css/site.css">
+    <header class="customHeader">
+        <nav align="right">
+            <img align="left" src="../lib/images/erpims.JPG" />
+            <br />
+            <a class="logout" href="logout.php">Logout</a>
+        </nav>
+    </header>
+    <br> <br> <br>
+    <form method="POST" action="../Controllers/fileupload.php"  enctype="multipart/form-data">
+        <fieldset>
+            <legend>Upload meeting schedule</legend>
+            <h3>Select file</h3>
+            <input type="file" id="meetingSchedule" name="meetingSchedule"><br /><br />
+            <input type="submit" name="upload" value="Upload">
+        </fieldset>
+    </form>
+</body>
+
+</html>

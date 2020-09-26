@@ -1,0 +1,30 @@
+<h2 align="center">Salaries</h2>
+<br>
+<ul style="display: contents;">
+    <li>
+        <a id="btnAdd" class="purpleButton">&nbsp; Add Salary &nbsp;</a>
+    </li> <br>
+    <li>
+        <a id="btnPending" class="purpleButton">&nbsp; Pending Salaries &nbsp;</a>
+    </li>
+</ul>
+<center>
+    <div id="centerLoad"></div>
+</center>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $("#btnAdd").click(function () {
+        $("#centerLoad").load("../Views/addSalary.php");
+    });
+
+    $("#btnPending").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../Controllers/salariesList.php',
+            success: function () {
+                $("#centerLoad").load("../Controllers/salariesList.php");
+            }
+        });
+    });
+</script>

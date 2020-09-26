@@ -1,0 +1,30 @@
+<h2 align="center">Employee Manipulation</h2>
+<br>
+<ul style="display: contents;">
+    <li>
+        <a id="btnRegister" class="purpleButton">&nbsp; Register New Employee &nbsp;</a>
+    </li> <br>
+    <li>
+        <a id="btnList" class="purpleButton">&nbsp; Employee List &nbsp;</a>
+    </li>
+</ul>
+<center>
+    <div id="centerLoad"></div>
+</center>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $("#btnRegister").click(function () {
+        $("#centerLoad").load("../Views/registerEmployees.php");
+    });
+
+    $("#btnList").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../Controllers/employeeList.php',
+            success: function () {
+                $("#centerLoad").load("../Controllers/employeeList.php");
+            }
+        });
+    });
+</script>
